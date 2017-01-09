@@ -9,12 +9,12 @@
     - {role: package_manager, tags: ['bootstrap']}
     - {role: zsh, tags: ['bootstrap']}
     - vim
-    # - python
+    - python
     - npm
     - hub
     - autoenv
     - ag
     - tmux
-    - git-flow
+    # - git-flow
     - {role: osx, when: ansible_os_family == "Darwin"}
 
