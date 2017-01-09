@@ -17,17 +17,26 @@
         ci = commit
         noff = merge --no-ff
         amend = commit --amend
+        wip = commit -m "WIP"
         br = branch
         df = diff
         dfs = diff --staged
-        pl = pull
-        pup = pull upstream
-        shorg = push -u origin
+        # Get changes for a single commit
+        dfc = "!dfc() { git diff $1^ $1; }; dfc"
+
+        please = push --force-with-lease
+
+        # http://gggritso.com/human-git-aliases
+        unstage = reset -q HEAD --
+        discard = checkout --
+        uncommit = reset --mixed HEAD~
 
         l = log --graph --decorate --oneline --abbrev-commit --all
         h = log --graph --decorate --oneline --abbrev-commit
 
-        nuke = delete-branch
+        # Open unstaged files in vim
+        edit = "!f() { ${1-vim} `git ls-files -m`; }; f"
+
         switch = !legit switch \"$@\"
         branches = !legit branches
         sprout = !legit sprout \"$@\"
@@ -43,10 +52,7 @@
         # Copy current branch name to clipboard (MacOSX only)
         cb = "!git rev-parse --abbrev-ref HEAD | tr -d '\n' | pbcopy"
 
-        f = flow
-        fublish = flow feature publish
         feature = flow feature start
-        fart = flow feature start
         finfeature = flow feature finish
         fix = flow hotfix start
         finfix = flow hotfix finish

@@ -1,3 +1,22 @@
+# Breakpoints
+# vim-snippets puts these on 2 lines. I prefer a single line.
+snippet pdb
+import pdb; pdb.set_trace()
+endsnippet
+
+snippet ipdb
+import ipdb; ipdb.set_trace()
+endsnippet
+
+snippet lipdb
+from ipdb import launch_ipdb_on_exception
+with launch_ipdb_on_exception():
+	${1}
+endsnippet
+
+snippet rdb
+from celery.contrib import rdb; rdb.set_trace()
+endsnippet
 
 # Nose testing
 
@@ -29,8 +48,8 @@ endsnippet
 
 snippet fixture
 @pytest.fixture()
-def ${1:name}():
-	return ${2}
+def ${1:name}(${2}):
+	return ${3}
 endsnippet
 
 snippet parametrize
@@ -42,8 +61,8 @@ endsnippet
 
 snippet yfixture
 @pytest.yield_fixture()
-def ${1:name}:
-	yield ${2}
+def ${1:name}(${2}):
+	yield ${3}
 endsnippet
 
 snippet a==

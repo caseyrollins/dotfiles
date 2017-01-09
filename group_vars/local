@@ -18,8 +18,6 @@ git_email: case.rollins@gmail.com
 
 # Vim
 
-# Only applies to OSX. Ignored on other platforms.
-vim_install_macvim: yes
 # Whether to install plugins automatically. If not, just run
 # :PlugInstall while in vim.
 vim_install_plugins: no
@@ -30,38 +28,54 @@ osx_homebrew_packages:
   - wget
   - tree
   - highlight
+  - terminal-notifier
+  # - wifi-password
+  # - youtube-dl
+  - curl
+  - htop-osx
+  - httpie
+  - redis
 
 # Mac Apps to be installed with homebrew-cask
 osx_cask_packages:
   # Browsers
-  # - firefox
-  # - google-chrome
+  - firefox
+  - google-chrome
   # Utilities
-  # - bettertouchtool
-  # - iterm2
-  # - caffeine
-  # - flux
-  # Vagrant/Virtualbox
-  # - vagrant
-  # - virtualbox
-  # chat
-  # - limechat
-  # - flowdock
-  # Password manager
-  # - 1password
+  - bettertouchtool
+  - iterm2
+  - caffeine
+  - flux
+  - appcleaner
+  # Chat
+  - flowdock
   # Backup/storage
   # - crashplan
   # - dropbox
-  # Music
-  # - spotify
+  # Media/Music
+  - spotify
+  # Images
+  # - imageoptim
+  # - licecap  # capturing gifs
   # Notetaking
   # - evernote
+  # - nvalt
+  # - skitch
+  # Fonts
+  - font-ubuntu
+  - font-cousine
+  # Databases
+  # - postgres
+  # - robomongo  # mongo client
+  # - psequel  # postgres client
+  # VPN
+  # - cloak
 
 # Node utilities
 npm_global_packages:
-  - grunt-cli
-  - gulp
-  - coffee-script
-  - bower
   - jsxhint
   - webpack
+  - eslint
+  - eslint-config-airbnb
+  - eslint-plugin-react
+  - babel-eslint

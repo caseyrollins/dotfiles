@@ -25,6 +25,14 @@ extract () {
     fi
 }
 
+# get gzipped size
+function gz() {
+    echo "orig size    (bytes): "
+    cat "$1" | wc -c
+    echo "gzipped size (bytes): "
+    gzip -c "$1" | wc -c
+}
+
 # credit: http://ku1ik.com/2012/05/04/scratch-dir.html
 # Creates a new scratch directory and cds to it
 function scratch {
@@ -48,3 +56,21 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+
+# Syntax-highlight text from clipboard
+# Requires highlight: brew install highlight
+# Usage: hit js
+function hit() {
+  if [ -z "$2" ]
+    then src="pbpaste"
+  else
+    src="cat $2"
+  fi
+  $src | highlight -O rtf --syntax $1 --font 'Ubuntu Mono' --style solarized-light --font-size 24 | pbcopy
+}
+
+# SSH and attach tmux session
+function sst() {
+  ssh "$1" -t tmux attach
+}

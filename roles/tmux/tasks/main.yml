@@ -6,9 +6,14 @@
 
 # TODO: Fedora
 
-- name: Install tmuxinator
-  gem: name=tmuxinator state=latest
-  when: tmux_install_tmuxinator
+- name: Install tmuxp
+  pip: name=tmuxp state=latest
+  when: tmux_install_tmuxp
+
+- name: Install tpm
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: "{{dotfiles_user_home}}/.tmux/plugins/tpm"
 
 - name: Symlink .tmux.conf
   file:
