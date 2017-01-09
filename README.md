@@ -92,6 +92,12 @@ To import the iterm2 profile, go to your iterm2 preferences, and enable "Load pr
 
 There are a few keyboard customizations that must be done manually:
 
+```
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
+```
+
 - Turning repeat speed up to 11.
 
 ![Keyboard settings](https://dl.dropboxusercontent.com/u/1693233/github/dotfiles-mac-keys.png "Key repeat settings")
@@ -137,8 +143,3 @@ license
 
 [MIT Licensed](http://sloria.mit-license.org/).
 
-```
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 12
-```
