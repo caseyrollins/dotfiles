@@ -92,6 +92,8 @@ To import the iterm2 profile, go to your iterm2 preferences, and enable "Load pr
 
 There are a few keyboard customizations that must be done manually:
 
+- ```chsh -s `which zsh```
+
 ```
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain KeyRepeat -int 1
