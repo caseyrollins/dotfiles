@@ -1,3 +1,4 @@
+alias da="docker attach"
 alias dc="docker-compose"
 alias dm="docker-machine"
 alias dss="docker-sync start"
